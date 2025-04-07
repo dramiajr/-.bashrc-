@@ -5,8 +5,8 @@
 #####################
 
 # Replace with whatever "~/path/ble.sh/out/ble.sh" you are using
-if [ -f ~/.ble.sh/ble.sh/out/ble.sh ]; then
-  source ~/.ble.sh/ble.sh/out/ble.sh
+if [ -f ~/ble.sh/out/ble.sh ]; then
+  source ~/ble.sh/out/ble.sh
   ble-color-setface auto_complete fg=238,underline
 fi
 
@@ -14,7 +14,7 @@ fi
 # Load Pywal colors if available
 ################################
 
-# Ignore if you don't want to use pywal
+# Ignore or delete if you don't want to use pywal
 if [ -f "$HOME/.cache/wal/colors.sh" ]; then
   source "$HOME/.cache/wal/colors.sh"
 fi
@@ -83,3 +83,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+#########
+# THE END
+#########
