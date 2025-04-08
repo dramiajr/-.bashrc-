@@ -40,8 +40,11 @@ COL_RESET="$(tput sgr0)"
 if [ "$EUID" -eq 0 ]; then
   PS1="┌──[${COL_ROOT}\u@${COL_HOST}\h${COL_RESET}]─[${COL_PATH}\w${COL_RESET}]\n└─${COL_PATH}# ${COL_RESET}"
 else
-  PS1="┌──[${COL_USER}\u@${COL_HOST}\h${COL_RESET}]─[${COL_PATH}\w${COL_RESET}]\n└─${COL_PATH}$ ${COL_RESET}"
+  PS1="┌──[${COL_USER}\u@${COL_HOST}\h${COL_RESET}]─[${COL_PATH}\w${COL_RESET}]\n└─${COL_PATH}\$ ${COL_RESET}"
 fi
+
+# Export the prompt
+export PS1
 
 ##################
 # History settings
