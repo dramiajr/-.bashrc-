@@ -50,7 +50,7 @@ pwd
 ```
 nano ~/.bashrc
 ```
-#### Paste the script from ADD here
+#### Paste the script from [.bashrc](https://github.com/dramiajr/bashrc-/blob/main/.bashrc%20script)
 ##### MAKE SURE `ble.sh` IS SOURCED CORRECTLY HERE
 ![step3](https://github.com/user-attachments/assets/f0a936b1-08d5-436d-aefb-fdcbddf93ece)
 
