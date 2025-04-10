@@ -1,4 +1,9 @@
+#
 # ~/.bashrc
+#
+
+# Load ble.sh only in interactive shells and without immediate attachment
+[[ $- == *i* ]] && source "~/ble.sh/out/ble.sh" --noattach
 
 #####################
 # ble.sh integration
@@ -6,8 +11,10 @@
 
 # Replace with whatever "~/path/ble.sh/out/ble.sh" you are using
 if [ -f ~/ble.sh/out/ble.sh ]; then
-  source ~/ble.sh/out/ble.sh
-  ble-color-setface auto_complete fg=238,underline
+  source ~/ble.sh/out/ble.sh --noattach
+  ble-color-setface auto_complete fg=238,underline    # Set autocomplete color to greyed out and underlined until activated 
+  ble-face -s syntax_error fg=242                     # Set error or backspace to greyed out
+  bleopt complete_ambiguous=                          # Disable ambigous completion from generating
 fi
 
 ################################
@@ -36,11 +43,15 @@ COL_RESET="$(tput sgr0)"
 # Two-line dynamic prompt (root vs user)
 ########################################
 
+# Disable ble.sh prompt override:
+bleopt prompt_ps1_final=
+bleopt prompt_ps1_transient=
+
 # Customize to your liking
 if [ "$EUID" -eq 0 ]; then
-  PS1="┌──[${COL_ROOT}\u@${COL_HOST}\h${COL_RESET}]─[${COL_PATH}\w${COL_RESET}]\n└─${COL_PATH}# ${COL_RESET}"
+  PS1="┌──[\[${COL_ROOT}\]\u@${COL_HOST}\h\[${COL_RESET}\]]─[\[${COL_PATH}\]\w\[${COL_RESET}\]]\n└─\[${COL_PATH}\]# \[${COL_RESET}\]"
 else
-  PS1="┌──[${COL_USER}\u@${COL_HOST}\h${COL_RESET}]─[${COL_PATH}\w${COL_RESET}]\n└─${COL_PATH}\$ ${COL_RESET}"
+  PS1="┌──[\[${COL_USER}\]\u@${COL_HOST}\h\[${COL_RESET}\]]─[\[${COL_PATH}\]\w\[${COL_RESET}\]]\n└─\[${COL_PATH}\]\$ \[${COL_RESET}\]"
 fi
 
 # Export the prompt
@@ -86,6 +97,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+###############
+# Attach ble.sh
+###############
+
+[[ ! ${BLE_VERSION-} ]] || ble-attach
 
 #########
 # THE END
