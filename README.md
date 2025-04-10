@@ -51,8 +51,8 @@ pwd
 nano ~/.bashrc
 ```
 #### Paste the script from [.bashrc](https://github.com/dramiajr/bashrc-/blob/main/.bashrc%20script)
-##### MAKE SURE `ble.sh` IS SOURCED CORRECTLY HERE
-![step3](https://github.com/user-attachments/assets/f0a936b1-08d5-436d-aefb-fdcbddf93ece)
+##### MAKE SURE `ble.sh` IS SOURCED CORRECTLY HERE 
+![step3](https://github.com/user-attachments/assets/f754847e-e8a6-4aaa-b2ba-a4b19ed55717)
 
 #### After pasting, exit the editor:
 - `CTRL + X` to exit
