@@ -5,9 +5,9 @@
 # Load ble.sh only in interactive shells and without immediate attachment
 [[ $- == *i* ]] && source "~/ble.sh/out/ble.sh" --noattach
 
-#####################
-# ble.sh integration
-#####################
+######################
+# ble.sh integration 
+######################
 
 # Replace with whatever "~/path/ble.sh/out/ble.sh" you are using
 if [ -f ~/ble.sh/out/ble.sh ]; then
@@ -17,18 +17,9 @@ if [ -f ~/ble.sh/out/ble.sh ]; then
   bleopt complete_ambiguous=                          # Disable ambigous completion from generating
 fi
 
-################################
-# Load Pywal colors if available
-################################
-
-# Ignore or delete if you don't want to use pywal
-if [ -f "$HOME/.cache/wal/colors.sh" ]; then
-  source "$HOME/.cache/wal/colors.sh"
-fi
-
-##############################################
-# Fallback terminal colors if pywal not loaded
-##############################################
+########################
+# Setting prompt colors
+########################
 
 get_color() { tput setaf "$1"; }
 
