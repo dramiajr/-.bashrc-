@@ -2,9 +2,6 @@
 # ~/.bashrc
 #
 
-# Load ble.sh only in interactive shells and without immediate attachment
-[[ $- == *i* ]] && source "~/ble.sh/out/ble.sh" --noattach
-
 ######################
 # ble.sh integration 
 ######################
