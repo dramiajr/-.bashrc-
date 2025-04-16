@@ -3,6 +3,7 @@
 This guide walks you through the process of setting up **ble.sh** (Bash Line Editor) for enhanced autocompletion and syntax highlighting in your terminal.
 I've made a slight tweak to how the output looks and implemented a two line dynamic prompt as well.
 
+Check out the [video](https://youtu.be/8cFqyMytRwc) on my YouTube for a full walkthrough of this setup and install! 
 
 #### Enjoy!
 
